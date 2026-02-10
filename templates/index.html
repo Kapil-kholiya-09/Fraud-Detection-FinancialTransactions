@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>💳 Credit Card Fraud Detection</h1>
+        <p class="subtitle">Enter Transaction Features</p>
+
+        <form method="POST">
+
+            <div class="input-group">
+                <input name="V4" placeholder="Feature V4" required>
+                <input name="V11" placeholder="Feature V11" required>
+                <input name="V12" placeholder="Feature V12" required>
+                <input name="V14" placeholder="Feature V14" required>
+                <input name="V16" placeholder="Feature V16" required>
+                <input name="V17" placeholder="Feature V17" required>
+                <input name="V18" placeholder="Feature V18" required>
+                <input name="V19" placeholder="Feature V19" required>
+                <input name="V15" placeholder="Feature V15" required>
+            </div>
+
+            <button type="submit">🔍 Predict Fraud</button>
+
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            Prediction Result: <strong>{{ prediction }}</strong>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
